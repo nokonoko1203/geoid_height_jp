@@ -1,6 +1,6 @@
 # geoid
 
-This is a calculating Geoid Height from Japan geoid model.
+This is AWS lambda function of calculating Geoid Height from Japan geoid model.
 Input lat/lng of JGD2011, Then getting geoid Height.
 
 ## setup
