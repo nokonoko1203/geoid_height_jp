@@ -1,0 +1,26 @@
+service: geoid
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  region: ap-northeast-1
+
+functions:
+  geoid:
+    handler: handler.get_geoid_height
+    events:
+      - http:
+          path: geoid
+          method: get
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    pythonBin: python3
+    dockerizePip: true
+    usePipenv: true
